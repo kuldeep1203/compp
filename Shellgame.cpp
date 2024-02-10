@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include<algorithm>
 using namespace std;
 #define ll long long
 #define va vector<int>
@@ -40,13 +41,25 @@ void fun(){
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
+    freopen("shell.in", "r", stdin);
 	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
+	
     int test_cases;
     cin>>test_cases;
-   
+    int a,b,g,ans=0;
+    vector<int>count(3,0);
+    while(test_cases--){
+        cin>>a>>b>>g;
+        swap(count[a-1],count[b-1]);
+        count[g-1]+=1;
+        ans = max(ans,count[g-1]);
 
+
+
+        
+    }
+    freopen("shell.out", "w", stdout);
+    cout<<ans;
 
     return 0;
 

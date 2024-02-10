@@ -40,12 +40,29 @@ void fun(){
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
+    freopen("mixmilk.in", "r", stdin);
 	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
-    int test_cases;
-    cin>>test_cases;
-   
+	freopen("mixmilk.out", "w", stdout);
+    vector<ll int>capacity(3,0),contain(3,0);
+    for(int i=0;i<3;i++){
+        cin>>capacity[i]>>contain[i];
+    }
+    int pour=1,in=0,ne=1;
+    while(pour<=100){
+         ll int amount_to_pour = min(contain[in], capacity[ne] - contain[ne]);
+        contain[in] -= amount_to_pour;
+        contain[ne] += amount_to_pour;
+    
+    // Update indices for next iteration
+        in = (in + 1) % 3;
+        ne = (ne + 1) % 3;
+    
+        pour++;
+    }
+
+    for(int i=0;i<3;i++){
+        cout<<contain[i]<<"\n";
+     }
 
 
     return 0;

@@ -34,18 +34,34 @@ void debug(int a){
 
 
 
-void fun(){
+void fun(ll int&ans,ll int g1,ll int g2,int index,vector<int> n){
+    if(index==n.size()){
+        ans = min(ans,abs(g1-g2));
+        return;
+    }
+    g1+=n[index];
+    fun(ans,g1,g2,index+1,n);
+    g1-=n[index];
+    g2+=n[index];
+    fun(ans,g1,g2,index+1,n);
+
 
 };
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
-	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
+    // freopen("problemname.in", "r", stdin);
+	// // the following line creates/overwrites the output file
+	// freopen("problemname.out", "w", stdout);
     int test_cases;
     cin>>test_cases;
-   
+    ll int ans=INT_MAX;
+    vector<int>n(test_cases);
+    for(int i=0; i<test_cases; i++){
+        cin>>n[i];
+    }
+    fun(ans,0,0,0,n);
+    cout<<ans;
 
 
     return 0;

@@ -6,9 +6,9 @@ using namespace std;
 
 #define pb push_back
 
-/**          HINTS/NOTES                 **/
 //when a problem statement says to find the end result of some
 //process, or to find when something occurs, it’s usually sufficient to simulate the process.
+
 //binary exponentiation - use pow()function for finding powers does it much faster 
 ll int gcd_(ll int a,ll int b){ //eculidean algo for finding gcd 
     while(a){
@@ -40,12 +40,23 @@ void fun(){
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
-	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
     int test_cases;
     cin>>test_cases;
-   
+    vector<ll int>a(test_cases,0);
+    for(ll int i=0;i<test_cases;i++){
+        cin>>a[i];
+    }
+    ll int b=0;
+    // sort(a.begin(),a.end());
+    for(ll int i=0;i<test_cases;i++){
+        for(ll int j=a.size()-1;j<test_cases;j--){
+            if(i!=j){
+                b =max(b,gcd_(a[i],a[j]));
+            }
+        }
+    }
+    cout<<b;
+    
 
 
     return 0;
