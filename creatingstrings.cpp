@@ -47,22 +47,46 @@ void debug(int a){
     cout<<a;
 }
 
+int char_count[26];
 
+void fun(string a,int& count,vector<string>&ans,string test){
+    if(test.size()==a.size()){
+        count++;
+        ans.push_back(test);
+        return;
+    }
+    for (int i = 0; i < 26; i++) {
+		// For all available characters
+		if (char_count[i] > 0) {
+			// Add it to the current string and continue the search
+			char_count[i]--;
+			fun(a,count,ans,test + (char)('a' + i));
+			char_count[i]++;
+		}
+	}
+    
 
-void fun(){
 
 };
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
-	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
-    int test_cases;
-    cin>>test_cases;
-   
+    // freopen("problemname.in", "r", stdin);
+	// // the following line creates/overwrites the output file
+	// freopen("problemname.out", "w", stdout);
+    string a;
+    cin>>a;
+    for (char c : a) { char_count[c - 'a']++; }//increase count of each character
+    int count=0;
+    vector<string>ans;
+    string t;
+    fun(a,count,ans,t);
+    
 
-
+    cout<<count<<"\n";
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<"\n";
+    }
     return 0;
 
 }

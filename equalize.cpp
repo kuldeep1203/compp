@@ -50,16 +50,75 @@ void debug(int a){
 
 
 void fun(){
+    ll int n;
+    cin>>n;
+    vector<int>a(n),k;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    set<int>st;
 
-};
+    for(auto e:a){
+        st.insert(e);
+    }
+    for(auto e :st){
+        k.push_back(e+n);
+    }
+    int ans = 0,count =0;
+    sort(k.rbegin(),k.rend());
+
+    for(auto e : st){
+        count++;
+        while(k.size() && k.back()<=e){
+            k.pop_back();
+            count--;
+        }
+        ans = max(ans,count);
+    }
+
+    
+   
+    
+    
+        
+       
+
+
+        
+    
+    
+
+   
+   
+    
+    // int max_freq = 0;
+    // for (auto& p : freq) {
+    //     max_freq = max(max_freq, p.second);
+    // }
+   
+    
+    
+    
+
+
+    
+    
+   
+
+
+}
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
-	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
+    // freopen("problemname.in", "r", stdin);
+	// // the following line creates/overwrites the output file
+	// freopen("problemname.out", "w", stdout);
     int test_cases;
     cin>>test_cases;
+    while(test_cases--){
+        fun();
+        cout<<"\n";
+    }
    
 
 

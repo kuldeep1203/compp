@@ -50,16 +50,38 @@ void debug(int a){
 
 
 void fun(){
-
+    ll int a, b;
+    cin >> a >> b;
+    if (a == 1 && b == 1 ) {
+        cout << "NO";
+    } 
+    else if(a%2!=0 && b%2!=0){
+        cout<<"NO";
+    }
+    else if(a%2!=0 && b%2==0 && b/2==a){
+        cout<<"NO";
+    }
+    else if(b%2!=0 && a%2==0 && a/2==b){
+        cout<<"NO";
+    }
+    
+    
+    else{
+        cout<<"YES";
+    }
 };
 
 
 int main(){
-    freopen("problemname.in", "r", stdin);
-	// the following line creates/overwrites the output file
-	freopen("problemname.out", "w", stdout);
+    // freopen("problemname.in", "r", stdin);
+	// // the following line creates/overwrites the output file
+	// freopen("problemname.out", "w", stdout);
     int test_cases;
     cin>>test_cases;
+    while(test_cases--){
+        fun();
+        cout<<"\n";
+    }
    
 
 
