@@ -1,0 +1,1 @@
+{"name":"Local: thornsandcoins","url":"c:\\Users\\kulu1\\Desktop\\Everything\\compp\\thornsandcoins.cpp","tests":[{"id":1708258497731,"input":"3\n10\n.@@*@.**@@\n5\n.@@@@\n15\n.@@..@***..@@@*\n","output":"3\n4\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\kulu1\\Desktop\\Everything\\compp\\thornsandcoins.cpp","group":"local","local":true}
