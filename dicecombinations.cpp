@@ -31,18 +31,23 @@ using namespace std;
 // }
 
 int main() {
-    int n;
+    long long int n;
     cin>>n;
     if(n==1){
         cout<<1<<endl;
     }
     else{
-        vector<int>dp(n+1,0);
-        dp[1]=1;
-        for(int i=2;i<n+1;i++){
-            dp[i]=dp[i-1]+dp[i-2] + 1;
+        vector<long long int>dp(n+1,0);
+        dp[0]=1;
+        for(int i =1;i<=n;i++){
+            for(int j=1;j<=6;j++){
+                if(i-j>=0){
+                    dp[i]+=dp[i-j];
+                }
+            }
+            dp[i]%=1000000007;
         }
-        cout<<dp[n]<<endl;
+        cout<<dp[n]<<"\n";
     }
     
    
