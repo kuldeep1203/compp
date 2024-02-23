@@ -3,8 +3,21 @@ using namespace std;
 #define ll long long
 #define va vector<int>
 #define vs vector<char>
-
 #define pb push_back
+#define mpli map<long long int,long long int>       
+#define tp3 1000
+#define tp5 100000
+#define tp6 1000000
+#define tp9 1000000000
+#define inf 100000000000000000
+#define mod 1000000007
+#define ff first
+#define ss second
+
+
+
+
+
 
 /**          HINTS/NOTES                 **/
 //when a problem statement says to find the end result of some
@@ -22,10 +35,6 @@ using namespace std;
 
 
 ll int gcd_(ll int a,ll int b){ //eculidean algo for finding gcd 
-
-
-
-
     while(a){
         ll t =a;
         a=b%a;
@@ -60,7 +69,10 @@ int main(){
 	freopen("problemname.out", "w", stdout);
     int test_cases;
     cin>>test_cases;
-   
+    while(test_cases--){
+        fun();
+        cout<<"\n";
+    }
 
 
     return 0;
