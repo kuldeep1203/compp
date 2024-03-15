@@ -1,10 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define va vector<int>
-#define vs vector<char>
-#define pb push_back
-#define mpli map<long long int,long long int>       
+#define pb push_back      
 #define tp3 1000
 #define tp5 100000
 #define tp6 1000000
@@ -15,6 +12,15 @@ using namespace std;
 #define ss second
 
 
+typedef vector<ll> vll;
+typedef pair<ll, ll> pll;
+typedef vector<pll> vpll;
+typedef map<ll,ll> mll;
+typedef stack<ll> sll;
+typedef stack<pll> spll;
+typedef greater<ll> gll;
+typedef priority_queue<ll,vll,gll> pqmin;
+typedef priority_queue<ll> pqmax;
 
 
 

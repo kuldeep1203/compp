@@ -1,1 +1,1 @@
-   // cout<<ma;
+    // cout<<x<<endl;

@@ -59,6 +59,6 @@
   "files.associations": {
     "*.ejs": "html",
     "iostream": "cpp",
-    "vector": "cpp"
+    "string": "cpp"
   }
 }
