@@ -65,19 +65,24 @@ void debug(int a){
 
 
 void fun(){
-    ll int N,K;
-    cin>>N>>K;
-    vector<int>a(N,0);
-    for(int i=0;i<N;i++){
-        cin>>a[i];
+    int n,l,r;
+    cin>>n>>l>>r;
+    int me=0;
+    int ml=INT_MAX,ch=0;;
+
+    int a =0;
+    for(int i=0;i<n;i++){
+        cin>>a;
+        if(a>=l && a<=r){
+            ch++;
+            me=max(ch,me);
+        }
+        else{
+            ch--;
+            ml=min(ch,ml);
+        }
     }
-    sort(a.begin(),a.end());
-    int m = 0 ;
-    int i =0;
-    int j =a.size()-1;
-    while(i<=j){
-        int v = abs(a[i]*K-
-    }
+    cout<<me<<ml;
 };
 
 

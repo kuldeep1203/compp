@@ -65,26 +65,63 @@ void debug(int a){
 
 
 void fun(){
-    ll int N,K;
-    cin>>N>>K;
-    vector<int>a(N,0);
-    for(int i=0;i<N;i++){
+    int n;
+    cin>>n;
+    vector<int>a(n,0);
+    for(int i=0;i<n;i++){
         cin>>a[i];
     }
-    sort(a.begin(),a.end());
-    int m = 0 ;
-    int i =0;
-    int j =a.size()-1;
-    while(i<=j){
-        int v = abs(a[i]*K-
+
+
+    int breakpoint=-1;
+    for(int i=0;i<n-1;i++){
+        if(a[i]>a[i+1]){
+            breakpoint=i;
+            break;
+        }
     }
+     if (breakpoint == -1 || breakpoint + 2 >= n){
+        // if array is sorted already
+        // or breakpoint exists at n-2 location
+        {
+            cout << "YES" << endl;
+            
+        }
+     } 
+     long long lowerLimit = a[breakpoint] - a[breakpoint + 1]; // lower limit
+        long long upperLimit = -1;                                // intially -1
+ 
+        if (breakpoint + 2 < n)
+            upperLimit = a[breakpoint + 2] - a[breakpoint + 1]; // if possible now define this
+ 
+        long long i = breakpoint; // start point
+ 
+        while (i < n - 1)
+        {
+            if (a[i] > a[i + 1])
+            {
+                lowerLimit = max(lowerLimit, a[i] - a[i + 1]);
+                if (i + 2 < n)
+                    upperLimit = min(upperLimit, a[i + 2] - a[i + 1]);
+                i += 2;
+            }
+            else
+            {
+                i++;
+            }
+        }
+ 
+        if (lowerLimit <= upperLimit)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    
+
 };
 
 
 int main(){
-    // freopen("problemname.in", "r", stdin);
-	// // the following line creates/overwrites the output file
-	// freopen("problemname.out", "w", stdout);
+  
     int test_cases;
     cin>>test_cases;
     while(test_cases--){
