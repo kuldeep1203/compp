@@ -1,0 +1,33 @@
+day 1  algozenith - patterns 
+
+not an array problem 
+more just dependent upon the conditions of outing values at a certain index value 
+
+diagonal right = i+j+c
+diagonal left wise = i+j = c (c = n-1)
+a  
+
+more so for lines just finding the equation of line is the  efficient way
+ to thiink of solution
+
+ 
+for shaded region rembere the eqn of line when trying to find the conditio
+the fact that region above is prolly smthing around i<=j or i>=j is 
+
+all about lines try to find lines and then conditions around the equations of the line are
+such as for a pyramid its all the points inside the line equaiton of bith sides
+ basically kinda  like the combination between the shading and lines 
+
+*****************
+*\..*../*\..*../*
+*.\.*./.*.\.*./.*
+*..\*/..*..\*/..*
+*****************
+*../*\..*../*\..*
+*./.*.\.*./.*.\.*
+*/..*..\*/..*..\*
+*****************
+*\..*../*\..*../*
+*.\.*./.*.\.*./.*
+*..\*/..*..\*/..*
+*****************
