@@ -1,2 +1,1 @@
-   // debug(k);
-    // debug(sunken);
+i-=1;
