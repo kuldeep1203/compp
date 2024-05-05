@@ -1,1 +1,1 @@
-i-=1;
+ // cout<<bscore<<" "<<sscore;
