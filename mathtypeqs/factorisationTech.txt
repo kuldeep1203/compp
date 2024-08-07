@@ -1,0 +1,35 @@
+give a number n  check if its a prime
+-one way is to just check till n-1 and if a divisior is available
+    -o(n)
+
+- better method O(root(n))
+     
+suppose a number N  - is not prime 
+        - that suggests it can be expressed in a way where
+        - it is the product of some prime no.s
+        -like 140 = 5^1 . 7^1 . 2^2
+
+        -now we can say that primeno. P1(D) = N 
+        -D being the rest of primes 
+        -we can also say that for this to work P1 or D < root(n)
+        cuz if both are greater then product of them cant be more than N
+
+        - so we can just loop till root n instead n as we will eventually in that range 
+        - cuz either one will be less than root N
+        -and if dont find anything than we can say its prime cuz all cant 
+        be greater than rootn 
+
+-Find all the divisors of a number n
+        - similarly  a number can have n at most 2(root(n));
+        -for every no. in rootn to n we will a corresponding divisor in 
+        -0-rootn
+
+-factorize a number n 
+        -12 -> 2*2*3 ,60 - >2.2.3.5
+        -12 - > [2:2 , 3 : 1 ]
+
+        -if a number n has p1,p2,p3.... prime factors 
+            - only one of these can be more than rootn
+            - cuz if there are two more than rootn then the product itself will go above N
+
+-oi88   
