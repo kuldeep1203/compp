@@ -76,16 +76,10 @@ void debug(int a){
 void fun(){
     int n;
     cin>>n;
-    int flag = 1;
-    vector<int>piles(n,0);
-    for(int i =0;i<n;i++){
-        cin>>piles[i];
-    }
-    int gcd = __gcd(piles[0],piles[1]);
-    for(int i = 2 ; i<piles.size();i++){
-        gcd = __gcd(piles[i],gcd);
-    }
-    gcd > 1  ? cout<<"YES" : cout<<"NO";
+    int ans = (n*(n-3))/2;
+    ans = ans%mod;
+    cout<<ans;
+    return;
 };
 
 

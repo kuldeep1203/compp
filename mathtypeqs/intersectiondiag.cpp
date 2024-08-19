@@ -1,3 +1,16 @@
+// Description
+// Find the number of unordered pairs of intersecting diagonals in the Convex N-gon. 
+// The intersecting point should be inside the polygon.
+
+// Input Format
+// The first line contains T (1 ≤ T ≤ 100000), the number of test cases.
+// Each of the next T lines contains a positive integer N denoting the number of 
+// sides of convex polygon (3 ≤ N ≤ 109).
+
+// Output Format
+// For each test case, print a single number denoting the number of intersecting 
+// diagonals in the convex N-gon. Since answer can be large, print it with modulo 1000000007.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -62,32 +75,11 @@ void debug(int a){
     cout<<a;
 }
 
-// bool isPrime(int n ){
-//     if(n==1) return false;
-//     if(n==2) return false;
-//     for(int i = 2 ; i*i<n ; i++){
-//         if(n%i == 0){
-//             return false;
-//         }
-//     }
-//     return true;
-// }
+
 
 void fun(){
-    int n;
-    cin>>n;
-    int flag = 1;
-    vector<int>piles(n,0);
-    for(int i =0;i<n;i++){
-        cin>>piles[i];
-    }
-    int gcd = __gcd(piles[0],piles[1]);
-    for(int i = 2 ; i<piles.size();i++){
-        gcd = __gcd(piles[i],gcd);
-    }
-    gcd > 1  ? cout<<"YES" : cout<<"NO";
+    
 };
-
 
 
 int main(){
@@ -108,3 +100,4 @@ int main(){
     return 0;
 
 }
+

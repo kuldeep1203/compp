@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int minSteps(int n) {
+        if(n==1 ) return 0;
+        vector<int>dp(n+1,0);
+        dp[0]=0;
+        dp[1]=0;
+        dp[2]=2;
+        if(n>2)   dp[3]=3;
+      
+        if(n == 2 || n ==  3 ) return dp[n]; 
+        for(int i  = 4 ; i<n+1 ;i++){
+            int steps = INT_MAX;
+            for(int j = 1 ; j<i; j++){
+                    
+                    if(i%j==0){
+                        steps = min(steps,dp[j]+(i/j));
+                    }
+            }
+            dp[i] = steps;
+        }
+        return dp[n];
+    }
+};
+
+// alternative solution:   we could just build to the  closest greates factor of n 
+
+// like in the case of  n = 9 we can just check if its divisble by i in i->n 
+// since 1 divdes 9 we can add 1 step and copy pasete and this way we reach 3 now 3 is the greater factor
+// of 9 so we can just copy paste 3 now instead of 1 similary we keep on doin this till we reach n and end.

@@ -73,19 +73,25 @@ void debug(int a){
 //     return true;
 // }
 
+//Bezouts theorem  - 
+//if a and b are integers, not both zero, then there exist integers x and y such that ax+by = gcd(a,b)
+//if a and b are coprime, then there exist integers x and y such that ax+by = 1
+
+
 void fun(){
-    int n;
-    cin>>n;
-    int flag = 1;
-    vector<int>piles(n,0);
-    for(int i =0;i<n;i++){
-        cin>>piles[i];
+    int a,b,c;
+    cin>>a>>b>>c;
+    int g = gcd_(a,b);
+    if(c%g==0){
+        cout<<"Yes";
+        return;
+
     }
-    int gcd = __gcd(piles[0],piles[1]);
-    for(int i = 2 ; i<piles.size();i++){
-        gcd = __gcd(piles[i],gcd);
+    else{
+        cout<<"No";
+        return;
     }
-    gcd > 1  ? cout<<"YES" : cout<<"NO";
+
 };
 
 
